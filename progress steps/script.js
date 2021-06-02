@@ -5,7 +5,7 @@ const circles = document.querySelectorAll('.circle');
 
 let currentActive = 1;
 
-next.addEventListener('click', () => {
+function goNext() {
   currentActive++;
 
   if (currentActive > circles.length) {
@@ -13,10 +13,9 @@ next.addEventListener('click', () => {
   }
 
   update();
+}
 
-})
-
-prev.addEventListener('click', () => {
+function goPrev() {
   currentActive--;
 
   if (currentActive < 1) {
@@ -24,8 +23,23 @@ prev.addEventListener('click', () => {
   }
 
   update();
+}
 
+document.addEventListener('keydown', (event) => {
+
+  if (event.code === "ArrowRight") {
+    goNext();
+  }
+  if (event.code === "ArrowLeft") {
+    goPrev();
+  }
 })
+
+
+
+next.addEventListener('click', () => goNext());
+
+prev.addEventListener('click', () => goPrev());
 
 function update() {
   circles.forEach((circle, idx) => {
