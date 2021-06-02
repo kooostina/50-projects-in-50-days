@@ -2,8 +2,8 @@
 
 
 :root {
---diabled: #e0e0e0;
---active: #3498db;
+  --diabled: #e0e0e0;
+  --active: #3498db;
 
 }
 
@@ -36,15 +36,17 @@ body {
   width: 350px;
 }
 
-.progress-container::before { /*the grey line*/
+.progress-container::before {
+  /*the grey line*/
   content: '';
   background-color: var(--diabled);
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%); /*to place the line right in the middle of the numbers*/
+  transform: translateY(-50%);
+  /*to place the line right in the middle of the numbers*/
   height: 4px;
-  width: 100%;
+  width: 95%;
   z-index: -1;
 }
 
@@ -53,11 +55,13 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%); /*to place the line right in the middle of the numbers*/
+  transform: translateY(-50%);
+  /*to place the line right in the middle of the numbers*/
   height: 4px;
   width: 0%;
   z-index: -1;
-  transition: .4s ease; /*to smoothly transition the line*/
+  transition: .4s ease;
+  /*to smoothly transition the line*/
 }
 
 .circle {
@@ -69,7 +73,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--diabled);;
+  border: 3px solid var(--diabled);
+  ;
   transition: .4s ease;
 }
 
@@ -97,7 +102,11 @@ body {
   outline: 0;
 }
 
+.btn:hover {
+  background-color: #257fbb;
+}
+
 .btn:disabled {
   background-color: var(--diabled);
-cursor: not-allowed;
+  cursor: not-allowed;
 }
