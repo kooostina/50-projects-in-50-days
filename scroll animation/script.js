@@ -5,4 +5,3 @@ checkBoxes();
 
 
 
-showElements(document.querySelectorAll('.other-box'));
